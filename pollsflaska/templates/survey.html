@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<h2 style="color: #1e5c90;">Choose Topic of interest</h2>
+
+
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        	<form class="form-horizontal well" role="form">
+        		<div class="row">
+        			<div class="col-xs-4">
+        				<img src="static/holydays.jpg" class="img-responsive img-radio">
+        				
+        			</div>
+        			<div class="col-xs-4">
+        				<img src="static/cars.jpg" class="img-responsive img-radio">
+        				
+        			</div>
+        			<div class="col-xs-4">
+        				<img src="static/brexit.jpg" class="img-responsive img-radio">
+        				
+        			</div>
+                </div>
+               
+
+            
+        		
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</form>
+        </div>
+    </div>
+</div>
+
+
+{% if polls %}
+<table class="table table-hover">
+    <tbody>
+        {% for poll in polls %}
+        <tr>
+            <td>
+                <a href="/poll/{{poll.key}}">{{poll.text}}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+
+<br />
+<form action="/seed" method="post">
+    <button class="btn btn-primary" type="submit">Click here for more</button>
+</form>
+{% endif %}
+
+{% endblock %}

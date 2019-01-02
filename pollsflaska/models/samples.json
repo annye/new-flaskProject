@@ -1,0 +1,30 @@
+[
+    {
+        "text": "Holidays in the Mediterrean?",
+        "choices": [
+            "Malta",
+            "Creete"
+            
+        ]
+    },
+    {
+        "text": "Buing a Car?.How do you commute to work?",
+        "choices": [
+            "Car",
+            "Motorcycle",
+            "Bicycle",
+            "Walk",
+            "Public transportation",
+            "No commute"
+        ]
+    },
+    {
+        "text": "Countries and quality of life, where is best to live?",
+        "choices": [
+            "Ireland",
+            "Italy",
+            "Germany",
+            "USA"
+        ]
+    }
+]
