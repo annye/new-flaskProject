@@ -1,0 +1,316 @@
+
+
+{% extends "layout.html" %}
+{% from "form_macros.html" import render_field %}
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<h4> <strong> List  of all arguments A</strong><h4>
+
+<div class="col-md-6"   
+<div class="row">  
+<table>
+        <thead>
+            <tr>
+                <th>Side</th>
+                <th>Arguments</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for a_query in a_query %}
+            <tr>
+                
+                <td>{{a_query.side}}</td>
+                <td>{{a_query.claim}}</td>
+            </tr>
+            {% endfor%}
+        </tbody>
+        </table>
+    </table>
+
+</div>
+<article>
+    <section>
+   
+        <form action="{{ url_for('postquestions') }}" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.strength) }} 
+
+                <tr class="submit">
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+                
+
+              
+            </table>
+        </form>
+    </section>
+</article>
+
+<article>
+    <section>
+   
+        <form action="{{ url_for('postquestions') }}" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.strength) }} 
+
+                <tr class="submit">
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+                
+
+              
+            </table>
+        </form>
+    </section>
+</article>
+
+<article>
+    <section>
+   
+        <form action="{{ url_for('postquestions') }}" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.strength) }} 
+
+                <tr class="submit">
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+                
+
+              
+            </table>
+        </form>
+    </section>
+</article>
+<br>
+        
+        
+        <br> 
+        <br> 
+
+<h4> <strong> List  of all arguments B</strong><h4>
+
+    <div class="col-md-6"   
+    <div class="row">  
+    <table>
+            <thead>
+                <tr>
+                    <th>Side</th>
+                    <th>Arguments</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                {% for b_query in b_query %}
+                <tr>
+                    
+                    <td>{{b_query.side}}</td>
+                    <td>{{b_query.claim}}</td>
+                </tr>
+                {% endfor%}
+            </tbody>
+            </table>
+        </table>
+    
+    </div>
+
+<article>
+    <section>
+   
+        <form action="{{ url_for('postquestions') }}" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.strength) }} 
+
+                <tr class="submit">
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+                
+
+              
+            </table>
+        </form>
+    </section>
+</article>
+
+<article>
+    <section>
+   
+        <form action="{{ url_for('postquestions') }}" method="post">
+            {{ form.hidden_tag() }}
+            <table>
+                {{ render_field(form.strength) }} 
+
+                <tr class="submit">
+                    <td></td>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+                
+
+              
+            </table>
+        </form>
+    </section>
+</article>
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+        <br>
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br> 
+        <br>
+         <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+   
+    <br>
+     <br> 
+     <br> 
+     <br> 
+     <br> 
+     <br> 
+     <br> 
+     <br> 
+     <br> 
+     <br>
+      <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+
+
+</body>
+</html>
+<html>
+<head>
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h3>Test------- Render an editable table using Flask, Jinja2 Boostrap template--------
+    </h3>
+
+<p>  test  test test test test>
+
+
+<div class="grid-container">
+       
+  <div class="grid-item"><p>
+       
+        <tbody>
+                {% for side_a  in side_a.items %}
+                      <tr>
+                        
+                         <td>{{ side_a.claim }}</td>
+                         
+                      </tr>
+                      {% endfor %}
+                      {% for page_num in side_a.iter_pages() %}
+                  {% if page_num %}
+                  <a class="btn btn-outline-info mb-4" href="{{ url_for('postquestions', page=page_num) }} ">  {{page_num }}   </a>
+       
+                  {% endif %}
+                  {% else %}
+                 
+       
+                  {% endfor %}
+            </tbody>
+         </table>
+</div>
+
+
+</body>
+</html>
+
+
+    <br>
+
+  
+    
+    
+
+</div>
+
+<br>
+<br>
+
+
+
+<h1>Star Rating</h1>
+<form>
+  <fieldset>
+    <span class="star-cb-group">
+      <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+      <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+      <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+      <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+      <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+    </span>
+  </fieldset>
+</form>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+{% endblock %}

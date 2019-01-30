@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Listen to the following conversation about holidays destinations</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+
+
+     <table>
+        <thead>
+           <tr>
+            
+             <th> <h2>  Side A  </h2>  </th>
+              
+           </tr>
+        </thead>
+
+        <tbody>
+            {% for side_a  in side_a.items %}
+                  <tr>
+                    
+                     <td>{{ side_a.claim }}</td>
+                     
+                  </tr>
+               {% endfor %}
+               {% for page_num in side_a.iter_pages() %}
+           {% if page_num %}
+           <a class="btn btn-outline-info mb-4" href="{{ url_for('dialogs1', page=page_num) }} ">  {{page_num }}   </a>
+
+           {% endif %}
+           {% else %}
+          
+
+           {% endfor %}
+        </tbody>
+     </table>
+
+
+
+
+
+
+
+   
+  
+
+  
+
+
+
+  </div>
+
+</div>
+
+</body>
+
+
+</html>
+
+
+{% endblock %}
+

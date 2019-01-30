@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+</style>
+</head>
+<body>
+
+<h2>Sumary discussion</h2>
+<p>Rate the folllowing arguments in the scale <strong>1</strong> to <strong>5</strong>:</p>
+  
+<h3>
+        <a href = "{{ url_for('summaryArg') }}"></a>
+     </h3>
+     <form action="" method="post">
+            
+     <table>
+            <thead>
+               <tr>
+                          <th><strong>ID</th></strong>
+                          <th>Pro Malta</th>
+                          <th>Convincing</th>
+                        
+                
+                
+               </tr>
+            </thead>
+   
+            <tbody>
+               {% for side_a in side_a %}
+                  <tr>
+                     <td> <p style="color:blue;">{{ side_a.id }} </p></td>
+                    
+                     <td>{{ side_a.title}}</td>
+                   
+                    
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+
+        
+         <div class="alert alert-primary" role="alert">
+               This is a primary alert—check it out!
+             </div>
+
+
+         <table>
+               <thead>
+                  <tr>
+                             <th><strong>ID</th></strong>
+                             <th>Pro Crete </th>
+                             <th>Convincing rates</th>
+                           
+                   
+                   
+                  </tr>
+               </thead>
+      
+               <tbody>
+                  {% for side_b in side_b %}
+                     <tr>
+                        <td> <p style="color:blue;">{{ side_b.id }} </p></td>
+                       
+                        <td>{{ side_b.title}}</td>
+                       
+                       
+                     </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+
+
+
+
+
+
+{% endblock %}

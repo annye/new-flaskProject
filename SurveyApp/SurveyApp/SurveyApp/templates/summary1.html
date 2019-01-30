@@ -1,0 +1,126 @@
+
+{% extends "layout.html" %}
+
+
+
+{% block title %}
+<title>Survey|  Index</title>
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+        <h2>Sumary discussion</h2>
+        <p>Rate the folllowing arguments in the scale <strong>1</strong> to <strong>5</strong>:</p>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    
+  
+        <h3>
+                <a href = "{{ url_for('summaryArg') }}"></a>
+             </h3>
+             <form action="" method="post">
+                    
+             <table>
+                    <thead>
+                       <tr>
+                                  <th><strong>ID</th></strong>
+                                  <th><p style="text-align:center">Pro Malta</th>
+                               
+                                
+                        
+                        
+                       </tr>
+                    </thead>
+           
+                    <tbody>
+                       {% for side_a in side_a %}
+                          <tr>
+                             <td> <p style="color:blue;">{{ side_a.id }} </p></td>
+                            
+                             <td>{{ side_a.title}}</td>
+                           
+                            
+                          </tr>
+                       {% endfor %}
+                    </tbody>
+                 </table>
+        
+
+
+
+
+
+  </div>
+  <div class="column" style="background-color:#bbb;">
+
+
+
+    <table>
+            <thead>
+               <tr>
+                          <th><strong>ID</th></strong>
+                          <th><p style="text-align:center">Pro Crete</th>
+                          
+                         
+                        
+                
+                
+               </tr>
+            </thead>
+   
+            <tbody>
+               {% for side_b in side_b %}
+                  <tr>
+                     <td> <p style="color:blue;">{{ side_b.id }} </p></td>
+                    
+                     <td><p style="text-align:center"></p>{{ side_b.title}}</td>
+                    
+                    
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+
+
+
+
+
+   
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>Rate table.....</h2>
+    <p>User input </p>
+</div>
+
+
+</body>
+</html>
+
+{% endblock %}

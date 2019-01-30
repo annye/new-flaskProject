@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Listen to the following conversation about holidays destinations</h2>
+
+<div>
+    <div class="row">
+    <div class="col-md-6" style="background-color:#aaa;">
+
+        <label >Side A</label>
+
+    </div>
+    <div class="col-md-6" style="background-color:#bbb;">
+        <label >Side B</label>
+    </div>
+    </div>
+    <br />
+    {% for item_a, item_b in result %}
+    <div class="row">
+            <div class="col-md-6">
+                <div style="border: 3px solid blue; padding: 5px;">
+                    <label>{{ item_a.claim }}</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+            &nbsp;
+            </div>
+    </div>
+    <div class="row">
+            <div class="col-md-6">
+        
+            &nbsp;
+        
+            </div>
+            <div class="col-md-6">
+                <div style="border: 3px solid khaki; padding: 5px;">
+                    <label >{{ item_b.claim }}</label>
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+
+    <br/> 
+    <hr />
+    <br />
+
+    <div class="row">
+            <div class="col-md-6">
+                    <a class="btn btn-default" href={{ url_for('dialogs', page=1 if page == 1 else page - 1) }}>Previous</a>
+            </div>
+            <div class="col-md-6">
+                <a class="btn btn-default" href={{ url_for('dialogs', page=total_pages if page == total_pages else page + 1) }}>Next</a>
+            </div>
+    </div>
+</div>
+
+<div class="row">
+      <div class="col-md-4">
+          <h2>Summary  discussion
+          </h2>
+          <p>
+              Please click the button and give us your opinion .
+          </p>
+          <p><a class="btn btn-default" href="{{ url_for('postquestions') }}">Learn more &raquo;</a></p>
+      </div>
+</div>
+  
+{% endblock %}
