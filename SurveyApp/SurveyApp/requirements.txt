@@ -45,7 +45,7 @@ numpy==1.15.4
 pandas==0.23.4
 pipsi==0.9
 pluggy==0.8.0
-py==1.7.0
+py==1.10.0
 pycparser==2.19
 pyjade==4.0.0
 PyJWT==1.5.3
