@@ -39,7 +39,7 @@ itsdangerous==0.24
 Jinja2==2.7.3
 Mako==1.0.7
 MarkupSafe==0.23
-mod-wsgi==4.6.5
+mod-wsgi==4.9.3
 more-itertools==5.0.0
 numpy==1.15.4
 pandas==0.23.4
